@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V.I.S.O.R. — Veeduría de Investigación, Seguimiento y Observación de Recursos</title>
+  <style>
+    :root {
+      --bg-primary: #0A192F;      /* Imperial Navy */
+      --bg-secondary: #112240;    /* Navy Claro */
+      --accent-amber: #FFB703;    /* Cyber Amber */
+      --text-main: #F4F6F8;       /* Pure Titanium */
+      --text-muted: #8892B0;      /* Titanium Muted */
+      --border-color: #233554;    /* Border Navy */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: rgba(10, 25, 47, 0.95);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--accent-amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--accent-amber);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .brand-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--text-main);
+    }
+
+    .status-tag {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--accent-amber);
+      font-size: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .hero-eyebrow {
+      color: var(--accent-amber);
+      font-family: monospace;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--accent-amber);
+      color: var(--bg-primary);
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 1.75rem;
+      border-radius: 6px;
+    }
+
+    .card-number {
+      color: var(--accent-amber);
+      font-family: monospace;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .manifesto {
+      background-color: var(--bg-secondary);
+      border-left: 3px solid var(--accent-amber);
+      padding: 2rem;
+      margin-bottom: 4rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .manifesto-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .manifesto-text {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-family: monospace;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+      .hero-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="logo-badge">V</div>
+      <div class="brand-title">V.I.S.O.R.</div>
+    </div>
+    <div class="status-tag">[ FASE: ARTICULACIÓN INICIAL ]</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-eyebrow">// INDEPENDENCIA Y RIGOR TÉCNICO</div>
+      <h1 class="hero-title">Auditoría Cívica Basada en Datos.<br>Sin Sesgos Políticas.</h1>
+      <p class="hero-subtitle">
+        Monitoreo independiente de contratación pública y recursos estatales mediante análisis de datos, análisis jurídico y rigor técnico.
+      </p>
+      <a href="https://forms.google.com" target="_blank" class="cta-button">POSTULARME COMO VEEDOR FUNDADOR</a>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="card-number">01 / ESTRUCTURA</div>
+        <h3 class="card-title">Rastreo Técnico</h3>
+        <p class="card-desc">Monitoreo continuo de contratación pública (SECOP II) mediante herramientas de análisis cuantitativo y cruzamiento de fuentes.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">02 / PRINCIPIO</div>
+        <h3 class="card-title">Autonomía Absoluta</h3>
+        <p class="card-desc">Sin filiación política, electoral ni gubernamental. Cero conflictos de interés o agendas de proselitismo.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">03 / MARCO LEGAL</div>
+        <h3 class="card-title">Respaldo Jurídico</h3>
+        <p class="card-desc">Acciones sustentadas bajo la Ley 850 de 2003 y mecanismos constitucionales de acceso a la información pública.</p>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <h2 class="manifesto-title">Convocatoria de Constitución</h2>
+      <p class="manifesto-text">
+        Estamos consolidando el núcleo fundador de veedores ciudadanos para la firma de la constitución formal. Buscamos abogados, contadores, analistas de datos, ingenieros y profesionales comprometidos con la vigilancia objetiva de los recursos públicos.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    V.I.S.O.R. &copy; 2026 — Veeduría de Investigación, Seguimiento y Observación de Recursos.<br>
+    Ley 850 de 2003 | Villavicencio, Meta, Colombia.
+  </footer>
+
+</body>
+</html>
