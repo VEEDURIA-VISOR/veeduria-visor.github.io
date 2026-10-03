@@ -4,14 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V.I.S.O.R. — Veeduría de Investigación, Seguimiento y Observación de Recursos</title>
+  
+  <!-- Tipografías Oficiales del Manual: Montserrat, Inter y JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-primary: #0A192F;      /* Imperial Navy */
-      --bg-secondary: #112240;    /* Navy Claro */
-      --accent-amber: #FFB703;    /* Cyber Amber */
-      --text-main: #F4F6F8;       /* Pure Titanium */
-      --text-muted: #8892B0;      /* Titanium Muted */
-      --border-color: #233554;    /* Border Navy */
+      --bg-primary: #0A192F;      /* Imperial Navy (60%) */
+      --bg-secondary: #020617;    /* Deep Slate */
+      --bg-card: #112240;         /* Navy Secondary */
+      --accent-amber: #FFB800;    /* Cyber Amber (10%) */
+      --text-titanium: #F8FAFC;   /* Pure Titanium (30%) */
+      --text-muted: #94A3B8;      /* Muted Subtitle */
+      --border-navy: #233554;     /* Structural Border */
     }
 
     * {
@@ -22,23 +29,24 @@
 
     body {
       background-color: var(--bg-primary);
-      color: var(--text-main);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-titanium);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
       margin: 0;
+      -webkit-font-smoothing: antialiased;
     }
 
     header {
       background-color: rgba(10, 25, 47, 0.98);
-      border-bottom: 1px solid var(--border-color);
-      padding: 0.85rem 2rem;
+      border-bottom: 1px solid var(--border-navy);
+      padding: 1rem 2.5rem;
       position: sticky;
       top: 0;
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
 
     .brand {
@@ -47,158 +55,189 @@
       gap: 0.85rem;
     }
 
-    /* Isotipo V.I.S.O.R. Oficial */
+    /* SVG vectorial exacto del Isotipo (The Monolithic Reticle - Manual Pág 3) */
     .logo-v-visor {
-      width: 28px;
-      height: 34px;
+      width: 32px;
+      height: 38px;
     }
 
     .brand-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: 3px;
-      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: var(--text-titanium);
     }
 
     .status-tag {
       background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-navy);
       color: var(--accent-amber);
       font-size: 0.75rem;
-      padding: 0.35rem 0.75rem;
+      padding: 0.4rem 0.85rem;
       border-radius: 4px;
-      font-family: monospace;
-      letter-spacing: 1px;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 1.5px;
+      font-weight: 700;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 3rem 1.5rem 4rem 1.5rem;
+      padding: 3.5rem 1.5rem 5rem 1.5rem;
     }
 
     .hero {
       text-align: center;
-      margin-bottom: 4rem;
-      padding-top: 1rem;
+      margin-bottom: 4.5rem;
     }
 
     .hero-eyebrow {
       color: var(--accent-amber);
-      font-family: monospace;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 2.5px;
+      margin-bottom: 1.25rem;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .hero-title {
-      font-size: 2.2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4rem;
       font-weight: 800;
       line-height: 1.25;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
       letter-spacing: -0.5px;
-      color: var(--text-main);
+      color: var(--text-titanium);
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-subtitle {
       color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 740px;
+      font-size: 1.15rem;
+      max-width: 760px;
       margin: 0 auto 2.5rem auto;
-      line-height: 1.6;
+      line-height: 1.7;
+      font-weight: 400;
     }
 
     .cta-button {
       display: inline-block;
       background-color: var(--accent-amber);
       color: var(--bg-primary);
-      font-weight: 800;
-      padding: 1rem 2.2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      padding: 1.1rem 2.5rem;
       border-radius: 4px;
       text-decoration: none;
       font-size: 0.95rem;
-      letter-spacing: 0.5px;
-      transition: all 0.2s ease;
+      letter-spacing: 1px;
+      transition: all 0.25s ease;
       border: none;
       cursor: pointer;
+      text-transform: uppercase;
     }
 
     .cta-button:hover {
-      opacity: 0.92;
+      background-color: #FFC324;
       transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(255, 183, 3, 0.25);
+      box-shadow: 0 6px 25px rgba(255, 184, 0, 0.3);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 1.5rem;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
     }
 
     .card {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      padding: 1.75rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-navy);
+      padding: 2rem 1.75rem;
       border-radius: 6px;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(255, 184, 0, 0.4);
     }
 
     .card-number {
       color: var(--accent-amber);
-      font-family: monospace;
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: 1px;
+      font-weight: 700;
     }
 
     .card-title {
-      font-size: 1.15rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
+      color: var(--text-titanium);
     }
 
     .card-desc {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.98rem;
+      line-height: 1.65;
     }
 
     .manifesto {
-      background-color: var(--bg-secondary);
-      border-left: 3px solid var(--accent-amber);
-      padding: 2rem;
-      margin-bottom: 4rem;
+      background-color: var(--bg-card);
+      border-left: 4px solid var(--accent-amber);
+      border-top: 1px solid var(--border-navy);
+      border-right: 1px solid var(--border-navy);
+      border-bottom: 1px solid var(--border-navy);
+      padding: 2.25rem;
+      margin-bottom: 4.5rem;
       border-radius: 0 6px 6px 0;
     }
 
     .manifesto-title {
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
       margin-bottom: 1rem;
+      color: var(--text-titanium);
     }
 
     .manifesto-text {
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.7;
+      color: var(--text-titanium);
+      font-size: 1.02rem;
+      line-height: 1.75;
     }
 
     footer {
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-navy);
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem 1.5rem;
       color: var(--text-muted);
-      font-size: 0.85rem;
-      font-family: monospace;
+      font-size: 0.88rem;
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--accent-amber);
+      text-decoration: none;
     }
 
     @media (max-width: 600px) {
       header {
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 0.85rem;
         align-items: flex-start;
+        padding: 1rem 1.5rem;
       }
       .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -207,16 +246,19 @@
 
   <header>
     <div class="brand">
-      <!-- SVG vectorial del Isotipo Oficial V.I.S.O.R. (V Blanca + Retículo Dorado) -->
+      <!-- Reconstrucción Vectorial según Sección 2.1 del Manual (Monolithic Reticle) -->
       <svg class="logo-v-visor" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- V Institucional Blanca -->
-        <path d="M10 10 L38 10 L50 68 L62 10 L90 10 L64 92 L36 92 Z" fill="#F4F6F8"/>
-        <!-- Retículo en el vértice inferior -->
-        <circle cx="50" cy="85" r="15" fill="#0A192F" stroke="#FFB703" stroke-width="3"/>
-        <circle cx="50" cy="85" r="7" stroke="#FFB703" stroke-width="2"/>
-        <circle cx="50" cy="85" r="2.5" fill="#FFB703"/>
-        <line x1="50" y1="65" x2="50" y2="105" stroke="#FFB703" stroke-width="2"/>
-        <line x1="30" y1="85" x2="70" y2="85" stroke="#FFB703" stroke-width="2"/>
+        <!-- V de trapecios divergentes a 15.5 grados -->
+        <path d="M6 8 L36 8 L50 68 L64 8 L94 8 L67 92 L33 92 Z" fill="#F8FAFC"/>
+        <!-- Espacio negativo circular central -->
+        <circle cx="50" cy="85" r="18" fill="#0A192F"/>
+        <!-- Retículo de precisión en Cyber Amber (#FFB800) -->
+        <circle cx="50" cy="85" r="15" stroke="#FFB800" stroke-width="3"/>
+        <circle cx="50" cy="85" r="6" stroke="#FFB800" stroke-width="2"/>
+        <circle cx="50" cy="85" r="2.5" fill="#FFB800"/>
+        <!-- Ejes cardinales de intersección -->
+        <line x1="50" y1="65" x2="50" y2="105" stroke="#FFB800" stroke-width="2"/>
+        <line x1="30" y1="85" x2="70" y2="85" stroke="#FFB800" stroke-width="2"/>
       </svg>
       <div class="brand-title">V.I.S.O.R.</div>
     </div>
@@ -225,10 +267,10 @@
 
   <main class="container">
     <section class="hero">
-      <div class="hero-eyebrow">VEEDURÍA DE INVESTIGACIÓN, SEGUIMIENTO Y OBSERVACIÓN DE RECURSOS</div>
+      <div class="hero-eyebrow">// VEEDURÍA CIUDADANA — LEY 850 DE 2003</div>
       <h1 class="hero-title">Control Ciudadano Técnico sobre la Gestión Pública</h1>
       <p class="hero-subtitle">
-        Observatorio técnico independiente dedicado a la auditoría de inversión pública, evaluación de obras, seguimiento presupuestal y cumplimiento institucional.
+        Observatorio cívico independiente dedicado a la auditoría de inversión pública, evaluación de obras, seguimiento presupuestal y cumplimiento institucional.
       </p>
       <a href="https://forms.google.com" id="form-link" target="_blank" class="cta-button">POSTULARME COMO VEEDOR FUNDADOR</a>
     </section>
@@ -237,17 +279,17 @@
       <div class="card">
         <div class="card-number">01 / AUDITORÍA MULTIDISCIPLINARIA</div>
         <h3 class="card-title">Seguimiento Integral</h3>
-        <p class="card-desc">Análisis de contratación, ejecución de obras, presupuestos territoriales y desempeño de entidades públicas.</p>
+        <p class="card-desc">Análisis exhaustivo de contratación, ejecución de infraestructura, presupuestos territoriales y desempeño de entidades públicas.</p>
       </div>
       <div class="card">
         <div class="card-number">02 / METODOLOGÍA</div>
         <h3 class="card-title">Evidencia Técnica</h3>
-        <p class="card-desc">Evaluación basada en cruce de datos oficiales, verificación sobre el terreno, indicadores cuantitativos y análisis legal.</p>
+        <p class="card-desc">Evaluación objetiva basada en cruce de datos oficiales, verificación sobre el terreno, indicadores cuantitativos y análisis legal.</p>
       </div>
       <div class="card">
         <div class="card-number">03 / MARCO LEGAL</div>
         <h3 class="card-title">Respaldo Jurídico</h3>
-        <p class="card-desc">Ejercicio cívico respaldado bajo la Ley 850 de 2003 y los mecanismos constitucionales de acceso a la información pública.</p>
+        <p class="card-desc">Ejercicio cívico amparado en la Ley 850 de 2003 y mecanismos constitucionales de acceso a la información pública.</p>
       </div>
     </section>
 
@@ -261,7 +303,8 @@
 
   <footer>
     V.I.S.O.R. &copy; 2026 — Veeduría de Investigación, Seguimiento y Observación de Recursos.<br>
-    Ley 850 de 2003 | Villavicencio, Meta, Colombia.
+    Contacto Institucional: <a href="mailto:veeduria.visor@gmail.com">veeduria.visor@gmail.com</a><br>
+    Villavicencio, Meta, Colombia.
   </footer>
 
 </body>
