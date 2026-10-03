@@ -44,20 +44,13 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.85rem;
     }
 
-    .logo-badge {
-      width: 36px;
-      height: 36px;
-      border: 2px solid var(--accent-amber);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: var(--accent-amber);
-      font-size: 0.9rem;
-      letter-spacing: 1px;
+    /* Monolithic Reticle SVG */
+    .logo-reticle {
+      width: 32px;
+      height: 32px;
     }
 
     .brand-title {
@@ -109,7 +102,7 @@
     .hero-subtitle {
       color: var(--text-muted);
       font-size: 1.15rem;
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto 2.5rem auto;
     }
 
@@ -210,44 +203,52 @@
 
   <header>
     <div class="brand">
-      <div class="logo-badge">V</div>
+      <svg class="logo-reticle" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="42" stroke="#FFB703" stroke-width="4" stroke-dasharray="6 4"/>
+        <circle cx="50" cy="50" r="28" stroke="#FFB703" stroke-width="3"/>
+        <circle cx="50" cy="50" r="8" fill="#FFB703"/>
+        <line x1="50" y1="2" x2="50" y2="18" stroke="#FFB703" stroke-width="4"/>
+        <line x1="50" y1="82" x2="50" y2="98" stroke="#FFB703" stroke-width="4"/>
+        <line x1="2" y1="50" x2="18" y2="50" stroke="#FFB703" stroke-width="4"/>
+        <line x1="82" y1="50" x2="98" y2="50" stroke="#FFB703" stroke-width="4"/>
+      </svg>
       <div class="brand-title">V.I.S.O.R.</div>
     </div>
-    <div class="status-tag">[ FASE: ARTICULACIÓN INICIAL ]</div>
+    <div class="status-tag">[ ESTADO: CONVOCATORIA CÍVICA ]</div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <div class="hero-eyebrow">// INDEPENDENCIA Y RIGOR TÉCNICO</div>
-      <h1 class="hero-title">Auditoría Cívica Basada en Datos.<br>Sin Sesgos Políticas.</h1>
+      <div class="hero-eyebrow">// INTELIGENCIA Y MONITORIZACIÓN CÍVICA</div>
+      <h1 class="hero-title">Análisis de Datos y Control Ciudadano sobre la Gestión Pública</h1>
       <p class="hero-subtitle">
-        Monitoreo independiente de contratación pública y recursos estatales mediante análisis de datos, análisis jurídico y rigor técnico.
+        Observatorio técnico independiente dedicado a la auditoría de inversión pública, evaluación de obras, seguimiento presupuestal y cumplimiento institucional.
       </p>
-      <a href="https://forms.google.com" target="_blank" class="cta-button">POSTULARME COMO VEEDOR FUNDADOR</a>
+      <a href="https://forms.google.com" id="form-link" target="_blank" class="cta-button">POSTULARME COMO VEEDOR FUNDADOR</a>
     </section>
 
     <section class="grid">
       <div class="card">
-        <div class="card-number">01 / ESTRUCTURA</div>
-        <h3 class="card-title">Rastreo Técnico</h3>
-        <p class="card-desc">Monitoreo continuo de contratación pública (SECOP II) mediante herramientas de análisis cuantitativo y cruzamiento de fuentes.</p>
+        <div class="card-number">01 / AUDITORÍA MULTIDISCIPLINARIA</div>
+        <h3 class="card-title">Seguimiento Integral</h3>
+        <p class="card-desc">Análisis exhaustivo de contratación, ejecución de obras, presupuestos territoriales y desempeño de entidades públicas.</p>
       </div>
       <div class="card">
-        <div class="card-number">02 / PRINCIPIO</div>
-        <h3 class="card-title">Autonomía Absoluta</h3>
-        <p class="card-desc">Sin filiación política, electoral ni gubernamental. Cero conflictos de interés o agendas de proselitismo.</p>
+        <div class="card-number">02 / METODOLOGÍA</div>
+        <h3 class="card-title">Evidencia Técnica</h3>
+        <p class="card-desc">Evaluación basada en cruce de datos oficiales, verificación sobre el terreno, indicadores cuantitativos y análisis legal.</p>
       </div>
       <div class="card">
         <div class="card-number">03 / MARCO LEGAL</div>
         <h3 class="card-title">Respaldo Jurídico</h3>
-        <p class="card-desc">Acciones sustentadas bajo la Ley 850 de 2003 y mecanismos constitucionales de acceso a la información pública.</p>
+        <p class="card-desc">Ejercicio cívico respaldado bajo la Ley 850 de 2003 y los mecanismos constitucionales de acceso a la información pública.</p>
       </div>
     </section>
 
     <section class="manifesto">
-      <h2 class="manifesto-title">Convocatoria de Constitución</h2>
+      <h2 class="manifesto-title">Apertura del Núcleo Veedor</h2>
       <p class="manifesto-text">
-        Estamos consolidando el núcleo fundador de veedores ciudadanos para la firma de la constitución formal. Buscamos abogados, contadores, analistas de datos, ingenieros y profesionales comprometidos con la vigilancia objetiva de los recursos públicos.
+        Estamos articulando el equipo inicial de ciudadanas y ciudadanos para la firma de la Acta de Conformación Legal. Convocamos a profesionales en derecho, contaduría, ingeniería, análisis de datos y líderes técnicos dispuestos a aportar sus conocimientos a la vigilancia transparente de los recursos comunes.
       </p>
     </section>
   </main>
